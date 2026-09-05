@@ -1,0 +1,130 @@
+[
+  {
+    "tipo": "pesquisa",
+    "nome": "Tecnologias Digitais e Recursos Didáticos no Ensino de Ciências e Matemática",
+    "periodo": "2021-Atual",
+    "situacao": "Em andamento",
+    "papel": "Responsável",
+    "descricao": "Macroprojeto PPG Ensino de Ciências Unigranrio: metodologias ativas e TICs; 5 mestrandos + 1 especialização"
+  },
+  {
+    "tipo": "extensao",
+    "nome": "Girls'n Code",
+    "periodo": "2019-2022",
+    "situacao": "Concluído",
+    "papel": "Responsável",
+    "descricao": "Ensino de Computação para meninas e jovens; 5 graduação"
+  },
+  {
+    "tipo": "empresa",
+    "nome": "ProFuzzy Consultoria e Sistemas Ltda",
+    "periodo": "1998-Atual",
+    "situacao": "Em andamento",
+    "papel": "CTO / Sócio Fundador",
+    "descricao": "Consultoria em otimização combinatória e IA aplicada"
+  },
+  {
+    "tipo": "pesquisa",
+    "nome": "GPIAE – Grupo de Pesquisa em Inteligência Artificial na Educação",
+    "periodo": "2025-Atual",
+    "situacao": "Em andamento",
+    "papel": "Pesquisador",
+    "descricao": "Grupo multidisciplinar DEGC/UFSC: IA aplicada à gestão e prática de ensino; adoção responsável e eficaz"
+  },
+  {
+    "tipo": "formacao",
+    "nome": "Pós-doutorado",
+    "periodo": "2026-Atual",
+    "situacao": "Em andamento",
+    "papel": "Pesquisador",
+    "descricao": "Pós-doutorado iniciado em 2026 (detalhes a completar)"
+  },
+  {
+    "tipo": "pesquisa",
+    "nome": "Enriquecendo o Conhecimento de Domínios com Extração de Informações Implícitas da Web",
+    "periodo": "2021-2022",
+    "situacao": "Concluído",
+    "papel": "Integrante",
+    "descricao": "Mecanismo de correlação entre termos e QA sobre dados estruturados/não-estruturados; FUNADESP"
+  },
+  {
+    "tipo": "pesquisa",
+    "nome": "Desenvolvimento de Recursos de Acessibilidade Utilizando Arduino",
+    "periodo": "2020-2021",
+    "situacao": "Concluído",
+    "papel": "Integrante",
+    "descricao": "Soluções de baixo custo para cegos/baixa visão; FUNADESP"
+  },
+  {
+    "tipo": "pesquisa",
+    "nome": "LOGÍSTICA HUMANITÁRIA: Análise e otimização de sistemas logísticos e de transporte",
+    "periodo": "2013-2018",
+    "situacao": "Concluído",
+    "papel": "Integrante",
+    "descricao": "Tese doutorado: sistema de transporte dinâmico para crise considerando custo x risco ruptura; SC e Amazonas"
+  },
+  {
+    "tipo": "pesquisa",
+    "nome": "Logística Integrada - otimização e simulação com enfoque humanitário",
+    "periodo": "2011-2018",
+    "situacao": "Concluído",
+    "papel": "Integrante",
+    "descricao": "Localização de centrais de inteligência e redes dinâmicas de transporte"
+  },
+  {
+    "tipo": "software",
+    "nome": "Dynamic Transport Network Prototype v2 / Dynamic Transport System Simulator Beta",
+    "periodo": "2013-2018",
+    "situacao": "Concluído",
+    "papel": "Autor",
+    "descricao": "Protótipo e simulador de rede dinâmica de transporte para crise rodoviária (tese doutorado)"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Radar-Concessoes",
+    "periodo": "2026-Atual",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "Plataforma de inteligência de mercado para concessões públicas com agentes de IA (repo privado)"
+  },
+  {
+    "tipo": "produto",
+    "nome": "MAGMA-Framework",
+    "periodo": "2026-Atual",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "Framework próprio (repo privado) - foco IA/agentes"
+  },
+  {
+    "tipo": "produto",
+    "nome": "gerador_historias",
+    "periodo": "2026-Atual",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "Gerador de histórias horror com multiagentes + LLMs: roteiro prompts imagens narração"
+  },
+  {
+    "tipo": "produto",
+    "nome": "neuro-fuzzy",
+    "periodo": "2026-Atual",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "ANFIS completo em PyTorch com extração de regras linguísticas"
+  },
+  {
+    "tipo": "produto",
+    "nome": "OncoCore; prontuario; clinica-terapeutica",
+    "periodo": "2026-Atual",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "Frente Saúde & Bem-estar (repos privados)"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Analise-viagens; Busca-Empresas-Transporte",
+    "periodo": "2025-2026",
+    "situacao": "Ativo",
+    "papel": "Dev / Pesquisador",
+    "descricao": "Otimização de frota mínima e prospecção transporte rodoviário"
+  }
+]
