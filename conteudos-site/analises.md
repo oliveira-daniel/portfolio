@@ -8,7 +8,7 @@ Publicações + projetos + titulação (mestrado 2010, doutorado 2018, pós-dout
 
 ## 2. Distribuição Qualis (2021-2024)
 
-8 artigos: A2: 1, A3: 4, A4: 1, B2: 1, C: 1. Gráfico de barras/pizza. Descartar o Qualis C. Adicionar o total de publicações, dividindo as categorias (livro, capítulo, artigo, congressos). 
+7 artigos no gráfico Qualis (descartado 1 C): A2: 1, A3: 4, A4: 1, B2: 1. Totais 5 anos: 8 artigos, 0 livros, 9 capítulos, 17 trabalhos em anais (8 completos + 3 resumos + 6 resumos expandidos) = 34 itens. 
 
 ## 3. Repositórios por categoria/ano
 

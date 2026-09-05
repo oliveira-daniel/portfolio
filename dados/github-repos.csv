@@ -1,47 +1,47 @@
 name,description,visibility,updated_at,category
 portfolio,,private,2026-09-05T06:12:00Z,Outros Projetos
 MAGMA-Framework,,private,2026-09-05T03:32:02Z,Machine Learning & AI
-design-gest-o-projetos,Gestão de projetos e desenho de processos PERT.,private,2026-08-31T22:15:07Z,Machine Learning & AI
+design-gest-o-projetos,"Gestão de projetos e desenho de processos PERT.",private,2026-08-31T22:15:07Z,Machine Learning & AI
 games-xp,,private,2026-08-31T05:04:05Z,Jogos & GameDev
 deep_research,,private,2026-08-24T04:37:58Z,Machine Learning & AI
 home-routine-tracker,,private,2026-08-08T19:51:59Z,Saúde & Bem-estar
 cosmic-ppt-gen,,private,2026-08-06T20:12:39Z,Automação & Workflows
-Analise-viagens,Algoritmos para análise de viagens e cálculo do número de frota mínima para operar o sistema de transporte público.,private,2026-06-25T19:30:03Z,Transporte & Logística
+Analise-viagens,"Algoritmos para análise de viagens e cálculo do número de frota mínima para operar o sistema de transporte público.",private,2026-06-25T19:30:03Z,Transporte & Logística
 prontuario,,private,2026-06-16T18:15:34Z,Saúde & Bem-estar
 OncoCore,,private,2026-06-04T17:36:12Z,Saúde & Bem-estar
-Radar-Concessoes,Plataforma de inteligência de mercado para o setor de concessões públicas, impulsada por agentes de IA.,private,2026-06-01T21:42:08Z,Transporte & Logística
+Radar-Concessoes,"Plataforma de inteligência de mercado para o setor de concessões públicas, impulsada por agentes de IA.",private,2026-06-01T21:42:08Z,Transporte & Logística
 clinica-terapeutica,,private,2026-05-02T21:12:11Z,Saúde & Bem-estar
-Fuzzy-Logic-Blueprint,Ferramenta para geração de bases de conhecimentos Fuzzy.,private,2026-03-02T19:46:29Z,Machine Learning & AI
-Visual-Shorts-Storyboarder,Aplicativo para geração de Storyboards para canais dark de histórias.,private,2026-02-04T21:47:31Z,Automação & Workflows
-neuro-fuzzy,Implementação completa em PyTorch de um sistema neuro-fuzzy adaptativo (ANFIS) com suporte a treinamento, extração de regras linguísticas e visualizações.,private,2026-01-30T22:46:13Z,Machine Learning & AI
-gerador_historias,Este projeto é um gerador de histórias de horror curtas que utiliza um sistema multiagentes e LLMs para ideação, criação de roteiros, prompts para imagens e narração.,private,2026-01-07T21:16:06Z,Machine Learning & AI
-n8n-workflow,Meu repositório de projetos de automações n8n.,private,2025-12-01T18:55:22Z,Automação & Workflows
-Busca-Empresas-Transporte,Este projeto foi desenvolvido para uso interno e exclusivo de minhas empresas, com o objetivo de identificar potenciais clientes atuantes no transporte rodoviário coletivo de passageiros urbanos no Brasil.,private,2025-10-10T19:13:41Z,Transporte & Logística
-Experimentos-RN,Este repositório reúne diversos experimentos pessoais relacionados a ciência de dados, aprendizado de máquina e redes neurais. O objetivo é explorar técnicas, testar ideias, consolidar aprendizados e compartilhar exemplos práticos de análise e modelagem de dados.,private,2025-10-08T22:05:32Z,Machine Learning & AI
+Fuzzy-Logic-Blueprint,"Ferramenta para geração de bases de conhecimentos Fuzzy.",private,2026-03-02T19:46:29Z,Machine Learning & AI
+Visual-Shorts-Storyboarder,"Aplicativo para geração de Storyboards para canais dark de histórias.",private,2026-02-04T21:47:31Z,Automação & Workflows
+neuro-fuzzy,"Implementação completa em PyTorch de um sistema neuro-fuzzy adaptativo (ANFIS) com suporte a treinamento, extração de regras linguísticas e visualizações.",private,2026-01-30T22:46:13Z,Machine Learning & AI
+gerador_historias,"Este projeto é um gerador de histórias de horror curtas que utiliza um sistema multiagentes e LLMs para ideação, criação de roteiros, prompts para imagens e narração.",private,2026-01-07T21:16:06Z,Machine Learning & AI
+n8n-workflow,"Meu repositório de projetos de automações n8n.",private,2025-12-01T18:55:22Z,Automação & Workflows
+Busca-Empresas-Transporte,"Este projeto foi desenvolvido para uso interno e exclusivo de minhas empresas, com o objetivo de identificar potenciais clientes atuantes no transporte rodoviário coletivo de passageiros urbanos no Brasil.",private,2025-10-10T19:13:41Z,Transporte & Logística
+Experimentos-RN,"Este repositório reúne diversos experimentos pessoais relacionados a ciência de dados, aprendizado de máquina e redes neurais. O objetivo é explorar técnicas, testar ideias, consolidar aprendizados e compartilhar exemplos práticos de análise e modelagem de dados.",private,2025-10-08T22:05:32Z,Machine Learning & AI
 Fabrica-Prod-Educ,,private,2025-10-06T16:55:48Z,Educação & Laboratórios
 Arqueometrico,,private,2025-05-06T18:43:38Z,Outros Projetos
 flask-hello-world,,private,2023-11-20T06:46:07Z,Outros Projetos
 flask-first,,private,2023-10-31T21:59:17Z,Outros Projetos
 MoodleUnigama,,private,2023-10-26T21:00:54Z,Educação & Laboratórios
 javascript,,public,2022-05-02T16:21:38Z,Outros Projetos
-revisao-javascript,Exercícios de Revisão para aulas de JavaScript.,private,2022-03-26T15:09:18Z,Educação & Laboratórios
-curador-digital-unigranrio,Prova de conceito para curadoria e geração de conteúdos automatizada.,private,2020-06-17T04:49:00Z,Educação & Laboratórios
+revisao-javascript,"Exercícios de Revisão para aulas de JavaScript.",private,2022-03-26T15:09:18Z,Educação & Laboratórios
+curador-digital-unigranrio,"Prova de conceito para curadoria e geração de conteúdos automatizada.",private,2020-06-17T04:49:00Z,Educação & Laboratórios
 Intro-jogos-javascript-videos,,private,2019-06-20T16:57:52Z,Jogos & GameDev
-livro-jogos-javascript-vol1,O conteúdo deste repositório é referente às atividades e experimentos presentes no e-book Desenvolvimento de Jogos com JavaScript, por Daniel de Oliveira.,public,2019-06-19T04:42:47Z,Jogos & GameDev
+livro-jogos-javascript-vol1,"O conteúdo deste repositório é referente às atividades e experimentos presentes no e-book Desenvolvimento de Jogos com JavaScript, por Daniel de Oliveira.",public,2019-06-19T04:42:47Z,Jogos & GameDev
 dom_css_javascript,,private,2019-06-07T10:50:16Z,Outros Projetos
-sec-game,Pensei num jogo estilo ataque hacker e ataques/invaxão com perguntas e questões de asserção razão para que os alunos respondam e possam evoluir e ter novos recursos.,private,2019-05-25T07:20:47Z,Jogos & GameDev
-jekyll-now,Build a Jekyll blog in minutes, without touching the command line.,public;fork,2019-05-22T12:37:37Z,Outros Projetos
-Laboratorio-Virtual,Laboratório virtual multidisciplinar em nuvem mantido pela UNIGRANRIO que possiblita aos alunos dos cursos de graduação presencial e à distância realizarem remotamente atividades práticas típicas de um laboratório presencial.,private,2019-05-10T10:37:01Z,Educação & Laboratórios
+sec-game,"Pensei num jogo estilo ataque hacker e ataques/invaxão com perguntas e questões de asserção razão para que os alunos respondam e possam evoluir e ter novos recursos.",private,2019-05-25T07:20:47Z,Jogos & GameDev
+jekyll-now,"Build a Jekyll blog in minutes, without touching the command line.",public;fork,2019-05-22T12:37:37Z,Outros Projetos
+Laboratorio-Virtual,"Laboratório virtual multidisciplinar em nuvem mantido pela UNIGRANRIO que possiblita aos alunos dos cursos de graduação presencial e à distância realizarem remotamente atividades práticas típicas de um laboratório presencial.",private,2019-05-10T10:37:01Z,Educação & Laboratórios
 cloudsteam,,private,2019-04-05T13:34:18Z,Outros Projetos
 uni-logo,,public,2018-09-06T21:35:47Z,Outros Projetos
-ava-blackboard-test,Aict online learning activity integration with learning platforms.,public,2018-05-17T10:04:19Z,Educação & Laboratórios
+ava-blackboard-test,"Aict online learning activity integration with learning platforms.",public,2018-05-17T10:04:19Z,Educação & Laboratórios
 Jam01_2017_1,,public,2017-03-30T12:29:46Z,Educação & Laboratórios
 NTesteAulas,,public,2017-03-09T03:37:23Z,Educação & Laboratórios
-AulasProjCustom,Material utilizado durante as aulas de Projeto de Customização - Fatenp,public,2017-01-28T04:34:51Z,Educação & Laboratórios
+AulasProjCustom,"Material utilizado durante as aulas de Projeto de Customização - Fatenp",public,2017-01-28T04:34:51Z,Educação & Laboratórios
 Board-Experiment,,public,2016-10-08T00:31:47Z,Jogos & GameDev
-Physics2DTest,Testes com físicas 2D Unity e C#,public,2016-10-06T15:21:41Z,Jogos & GameDev
-Estruturas-de-dados-Jogos,Estudo e aplicação das técnicas de programação e estruturas de dados em jogos digitais e simulação.,public,2016-09-29T19:11:47Z,Jogos & GameDev
-JanelaDialogo,Janela de diálogo simples feita em Unity e C#. Objetivando a colaboração dos alunos de Jogos Digitais - Fatenp / Unigranrio.,public,2016-09-29T10:59:17Z,Jogos & GameDev
-WorkshopViaCatarina,Arquivos gerados no workshop Via Catarina,public,2016-08-24T17:38:49Z,Jogos & GameDev
-TopDownGame,Projeto de Game Top-down referente aos tutoriais da Game Jam,public,2016-08-24T15:36:13Z,Jogos & GameDev
-ARVisualization,Some Vuforia and Unity Tests,public,2016-08-24T15:28:07Z,Jogos & GameDev
+Physics2DTest,"Testes com físicas 2D Unity e C#",public,2016-10-06T15:21:41Z,Jogos & GameDev
+Estruturas-de-dados-Jogos,"Estudo e aplicação das técnicas de programação e estruturas de dados em jogos digitais e simulação.",public,2016-09-29T19:11:47Z,Jogos & GameDev
+JanelaDialogo,"Janela de diálogo simples feita em Unity e C#. Objetivando a colaboração dos alunos de Jogos Digitais - Fatenp / Unigranrio.",public,2016-09-29T10:59:17Z,Jogos & GameDev
+WorkshopViaCatarina,"Arquivos gerados no workshop Via Catarina",public,2016-08-24T17:38:49Z,Jogos & GameDev
+TopDownGame,"Projeto de Game Top-down referente aos tutoriais da Game Jam",public,2016-08-24T15:36:13Z,Jogos & GameDev
+ARVisualization,"Some Vuforia and Unity Tests",public,2016-08-24T15:28:07Z,Jogos & GameDev
