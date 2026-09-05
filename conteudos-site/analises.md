@@ -37,3 +37,9 @@ Cases por frente: Saúde & Bem-estar, Transporte & Logística, Educação. Repos
 - `publicacoes-ultimos-5-anos.csv` (com coluna `qualis` 2021-2024)
 - `curriculos/` (Profile + Lattes)
 
+# Frases:
+
+- IA Aplicada de forma Criativa e Resolutiva.
+- Soluções de Inteligência Aplicada ao Ensino.
+- 
+
