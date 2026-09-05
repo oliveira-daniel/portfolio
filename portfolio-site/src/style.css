@@ -1,11 +1,26 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-yellow: #F1CA30;
   --color-brand-green: #518E45;
   --color-brand-dark: #20372F;
   --color-brand-cream: #F9F6EB;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F9F6EB;
+  color: #20372F;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: #0f172a;
+  color: #e5e7eb;
 }
 
 .glass {
@@ -17,7 +32,20 @@
 }
 
 .dark .glass {
-  background: rgba(32, 55, 47, 0.6);
-  border: 1px solid rgba(81, 142, 69, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(81, 142, 69, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
+
+.dark .text-brand-dark { color: #e5e7eb; }
+.dark .text-brand-dark\/80 { color: rgba(229, 231, 235, 0.8); }
+.dark .text-brand-dark\/70 { color: rgba(229, 231, 235, 0.7); }
+.dark .text-brand-dark\/60 { color: rgba(229, 231, 235, 0.6); }
+.dark .text-brand-dark\/40 { color: rgba(229, 231, 235, 0.4); }
+.dark .text-brand-dark\/50 { color: rgba(229, 231, 235, 0.5); }
+.dark [class*="bg-brand-cream"] { background-color: #0f172a; }
+.dark .border-brand-green\/30 { border-color: rgba(81, 142, 69, 0.4); }
+.dark .bg-brand-green\/20 { background-color: rgba(81, 142, 69, 0.2); }
+.dark .bg-brand-green { background-color: #518E45; }
+.dark .text-brand-green { color: #6bcf5a; }
+.dark .text-brand-yellow { color: #F1CA30; }

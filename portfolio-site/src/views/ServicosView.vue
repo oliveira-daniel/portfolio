@@ -3,7 +3,7 @@ import GlassCard from '../components/GlassCard.vue'
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold text-brand-dark mb-2">Consultoria</h1>
+  <h1 class="text-3xl font-bold text-brand-dark mb-2">Serviços</h1>
   <p class="text-brand-dark/60 mb-8">ProFuzzy Consultoria e Sistemas Ltda — desde 1998</p>
 
   <section class="grid md:grid-cols-3 gap-6 mb-8">

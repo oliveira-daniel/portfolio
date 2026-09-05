@@ -1,16 +1,6 @@
 <script setup lang="ts">
 import GlassCard from '../components/GlassCard.vue'
-import repos from '../data/github-repos.json'
-import pubs from '../data/publicacoes-ultimos-5-anos.json'
-import ori from '../data/orientacoes.json'
 import projetos from '../data/projetos.json'
-
-const artigos = pubs.filter((p: any) => p.tipo === 'artigo' && p.qualis !== 'C')
-const artigosTotal = pubs.filter((p: any) => p.tipo === 'artigo').length
-const capitulos = pubs.filter((p: any) => p.tipo === 'capitulo').length
-const anais = pubs.filter((p: any) => ['anais', 'resumo', 'resumo_expandido'].includes(p.tipo)).length
-const mestrados = ori.filter((o: any) => o.tipo === 'mestrado' && o.situacao === 'Concluída').length
-const reposIA = repos.filter((r: any) => r.category === 'Machine Learning & AI').length
 
 const ativos = projetos.filter((p: any) => p.situacao === 'Em andamento')
 </script>
@@ -23,31 +13,35 @@ const ativos = projetos.filter((p: any) => p.situacao === 'Em andamento')
           D
         </div>
         <div>
-          <h1 class="text-4xl font-bold text-brand-dark mb-2">Daniel Oliveira</h1>
+          <h1 class="text-4xl font-bold text-brand-green mb-2">Daniel Oliveira</h1>
           <p class="text-brand-dark/80 leading-relaxed">
             CTO e sócio-fundador da <strong>ProFuzzy</strong> (1998–atual), Professor no PPG Ensino de Ciências da Unigranrio e pesquisador no <strong>GPIAE/DEGC/UFSC</strong>. Doutor em Engenharia de Produção (UFSC/INSA-Rouen), mestre em Computação (Univali). Atua na interseção entre Inteligência Artificial, otimização combinatória e educação — com experiência em sistemas neuro-fuzzy, agentes multiagentes, LLMs, RAG, e plataformas de IA para concessões, saúde e transporte.
           </p>
+          <div class="flex gap-3 mt-4">
+            <router-link to="/servicos" class="glass px-4 py-2 rounded-lg text-sm font-semibold text-brand-green hover:scale-105 transition-transform">
+              Ver Serviços
+            </router-link>
+            <router-link to="/academico" class="glass px-4 py-2 rounded-lg text-sm font-semibold text-brand-green hover:scale-105 transition-transform">
+              Produção Acadêmica
+            </router-link>
+          </div>
         </div>
       </div>
     </GlassCard>
   </section>
 
-  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
     <GlassCard>
-      <p class="text-3xl font-bold text-brand-green">{{ artigosTotal }}</p>
-      <p class="text-sm text-brand-dark/60">Artigos (5 anos)</p>
+      <h3 class="font-bold text-brand-dark mb-2">Soluções em IA & Otimização</h3>
+      <p class="text-sm text-brand-dark/60">LLMs, agentes, RAG, sistemas neuro-fuzzy, algoritmos genéticos, GRASP, redes de fluxo.</p>
     </GlassCard>
     <GlassCard>
-      <p class="text-3xl font-bold text-brand-green">{{ capitulos }}</p>
-      <p class="text-sm text-brand-dark/60">Capítulos</p>
+      <h3 class="font-bold text-brand-dark mb-2">Plataformas & Automação</h3>
+      <p class="text-sm text-brand-dark/60">Desenvolvimento de plataformas web, pipelines n8n, dashboards, crawlers, storyboards com IA.</p>
     </GlassCard>
     <GlassCard>
-      <p class="text-3xl font-bold text-brand-green">{{ anais }}</p>
-      <p class="text-sm text-brand-dark/60">Trabalhos em anais</p>
-    </GlassCard>
-    <GlassCard>
-      <p class="text-3xl font-bold text-brand-green">{{ mestrados }}</p>
-      <p class="text-sm text-brand-dark/60">Orientações concluídas</p>
+      <h3 class="font-bold text-brand-dark mb-2">Frentes de Atuação</h3>
+      <p class="text-sm text-brand-dark/60">Saúde & Bem-estar, Transporte & Logística, Concessões Públicas, Educação.</p>
     </GlassCard>
   </section>
 
