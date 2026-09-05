@@ -16,6 +16,27 @@ body {
   background-color: #F9F6EB;
   color: #20372F;
   transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 600px 400px at 10% 20%, rgba(81, 142, 69, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 90% 80%, rgba(241, 202, 48, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(81, 142, 69, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dark body::before {
+  background:
+    radial-gradient(ellipse 600px 400px at 10% 20%, rgba(81, 142, 69, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 90% 80%, rgba(241, 202, 48, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(81, 142, 69, 0.08) 0%, transparent 70%);
 }
 
 .dark body {
@@ -24,17 +45,17 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 .dark .glass {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(81, 142, 69, 0.25);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(81, 142, 69, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .dark .text-brand-dark { color: #e5e7eb; }
