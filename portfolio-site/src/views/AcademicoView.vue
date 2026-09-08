@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { BookOpenText, Building2, CalendarDays, ChevronDown, Info, Users } from 'lucide-vue-next'
 import GlassCard from '../components/GlassCard.vue'
-import QualisChart from '../components/QualisChart.vue'
+import DonutChart from '../components/DonutChart.vue'
 import pubs from '../data/publicacoes-ultimos-5-anos.json'
 import ori from '../data/orientacoes.json'
 
@@ -35,6 +35,12 @@ const label: Record<string, string> = {
   anais: 'Anais completos',
   resumo: 'Resumos',
   resumo_expandido: 'Resumos expandidos',
+}
+const displayTipos = ['artigo', 'capitulo', 'anais_eventos'] as const
+const displayLabel: Record<string, string> = {
+  artigo: 'Periódicos',
+  capitulo: 'Capítulos',
+  anais_eventos: 'Anais',
 }
 
 const openSections = ref<string[]>(['artigo'])
@@ -74,13 +80,55 @@ const gruposOrdenados = computed(() =>
     return end(b.periodo) - end(a.periodo)
   }),
 )
+
+const gruposAtivos = computed(() => grupos.filter((g) => g.periodo.includes('Atual')))
+const totalPubs = computed(() => pubs.length)
+const resumoCount = computed(() => pubs.filter((p: any) => ['resumo', 'resumo_expandido'].includes(p.tipo)).length)
+const gruposPorInstituicao = computed(() => {
+  const m: Record<string, number> = {}
+  for (const g of grupos) m[g.instituicao] = (m[g.instituicao] || 0) + 1
+  return m
+})
+
+const anaisEventos = computed(() => [...grouped.value['anais'], ...grouped.value['resumo'], ...grouped.value['resumo_expandido']])
+const displayGrouped = computed<Record<string, any[]>>(() => ({
+  artigo: grouped.value['artigo'],
+  capitulo: grouped.value['capitulo'],
+  anais_eventos: anaisEventos.value,
+}))
+
+const pubDonut = computed(() => {
+  const labels = displayTipos.map((t) => displayLabel[t])
+  const values = displayTipos.map((t) => (displayGrouped.value as any)[t].length)
+  return { labels, values }
+})
+const pubColors = ['#518E45', '#F1CA30', '#20372F']
+
+const oriDonut = computed(() => ({
+  labels: ['Concluídas', 'Em andamento'],
+  values: [concluidas.value.length, aIniciar.value.length],
+}))
+const oriColors = ['#518E45', '#F1CA30']
+
+const gruposDonut = computed(() => ({
+  labels: ['Ativos', 'Encerrados'],
+  values: [gruposAtivos.value.length, grupos.length - gruposAtivos.value.length],
+}))
+const gruposColors = ['#518E45', '#cbd5e1']
+
+const qualisDonut = computed(() => {
+  const labels = Object.keys(qualisCount.value).sort()
+  const values = labels.map((l) => qualisCount.value[l])
+  return { labels, values }
+})
+const qualisPalette: Record<string, string> = { A2: '#20372F', A3: '#518E45', A4: '#F1CA30', B2: '#94a3b8' }
+const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPalette[l] ?? '#94a3b8'))
 </script>
 
 <template>
   <h1 class="text-3xl font-bold text-brand-dark mb-2">Acadêmico</h1>
-  <p class="text-brand-dark/60 mb-6">Últimos 5 anos</p>
 
-  <div class="flex gap-2 mb-8 flex-wrap">
+  <div class="flex gap-2 mb-8 mt-6 flex-wrap">
     <button
       v-for="t in tabs"
       :key="t.id"
@@ -95,41 +143,20 @@ const gruposOrdenados = computed(() =>
   </div>
 
   <div v-if="tab === 'geral'">
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-      <GlassCard>
-        <p class="text-3xl font-bold text-brand-green">{{ artigos.length }}</p>
-        <p class="text-sm text-brand-dark/60">Artigos</p>
-      </GlassCard>
-      <GlassCard>
-        <p class="text-3xl font-bold text-brand-green">{{ capitulos.length }}</p>
-        <p class="text-sm text-brand-dark/60">Capítulos</p>
-      </GlassCard>
-      <GlassCard>
-        <p class="text-3xl font-bold text-brand-green">{{ anais.length }}</p>
-        <p class="text-sm text-brand-dark/60">Em anais</p>
-      </GlassCard>
-      <GlassCard>
-        <p class="text-3xl font-bold text-brand-green">{{ concluidas.length }}</p>
-        <p class="text-sm text-brand-dark/60">Orientações</p>
-      </GlassCard>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <DonutChart title="Publicações*" :labels="pubDonut.labels" :values="pubDonut.values" :colors="pubColors" />
+      <DonutChart title="Publicações no Extrato Qualis*" :labels="qualisDonut.labels" :values="qualisDonut.values" :colors="qualisColors" />
+      <DonutChart title="Orientações de mestrado" :labels="oriDonut.labels" :values="oriDonut.values" :colors="oriColors" />
+      <DonutChart title="Grupos de pesquisa" :labels="gruposDonut.labels" :values="gruposDonut.values" :colors="gruposColors" />
     </section>
-
-    <section>
-      <h2 class="text-xl font-bold text-brand-dark mb-4">Qualis (artigos, exceto C)</h2>
-      <QualisChart :counts="qualisCount" />
-      <div class="flex gap-4 flex-wrap mt-4">
-        <GlassCard v-for="(q, label) in qualisCount" :key="label">
-          <p class="text-2xl font-bold text-brand-green">{{ q }}</p>
-          <p class="text-sm text-brand-dark/60">Qualis {{ label }}</p>
-        </GlassCard>
-      </div>
-    </section>
+    <p class="text-xs text-brand-dark/40 mt-3">* Publicações dos últimos 5 anos</p>
   </div>
 
   <div v-else-if="tab === 'publicacoes'">
+    <p class="text-sm text-brand-dark/60 mb-4">Publicações dos últimos 5 anos</p>
     <div class="space-y-3">
       <div
-        v-for="t in tipos"
+        v-for="t in displayTipos"
         :key="t"
         class="rounded-2xl border border-brand-green/15 overflow-hidden bg-white/40 backdrop-blur-sm dark:bg-white/[0.04] dark:border-white/10"
       >
@@ -138,8 +165,8 @@ const gruposOrdenados = computed(() =>
           class="w-full flex items-center justify-between gap-2 text-left px-6 py-4"
         >
           <span class="flex items-center gap-2">
-            <h2 class="text-lg font-bold text-brand-dark">{{ label[t] }}</h2>
-            <span class="badge badge-yellow">{{ grouped[t].length }}</span>
+            <h2 class="text-lg font-bold text-brand-dark">{{ displayLabel[t] }}</h2>
+            <span class="badge badge-yellow">{{ (displayGrouped as any)[t].length }}</span>
           </span>
           <ChevronDown
             class="w-5 h-5 text-brand-green shrink-0 transition-transform"
@@ -147,7 +174,7 @@ const gruposOrdenados = computed(() =>
           />
         </button>
         <div v-if="openSections.includes(t)" class="px-3 pb-3 space-y-3 border-t border-brand-green/10 dark:border-white/10 pt-3 bg-brand-green/[0.02] dark:bg-white/[0.02]">
-          <GlassCard v-for="p in grouped[t]" :key="p.titulo">
+          <GlassCard v-for="p in (displayGrouped as any)[t]" :key="p.titulo">
             <div class="flex flex-wrap gap-1.5 mb-1">
               <span class="badge badge-green">{{ p.ano }}</span>
               <span v-if="p.qualis.startsWith('A')" class="badge badge-green">Qualis {{ p.qualis }}</span>
