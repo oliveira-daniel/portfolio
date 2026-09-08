@@ -11,7 +11,7 @@ const links = [
   { path: '/', label: 'Início' },
   { path: '/servicos', label: 'Serviços' },
   { path: '/academico', label: 'Acadêmico' },
-  { path: '/projetos', label: 'Projetos' },
+  { path: '/projetos', label: 'Portfólio' },
   { path: '/blog', label: 'Blog' },
 ]
 </script>
@@ -20,7 +20,7 @@ const links = [
   <nav class="sticky top-0 z-50 glass">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <router-link to="/" class="text-xl font-bold" :class="isDark ? 'text-white' : 'text-brand-dark'">
-        Daniel Oliveira
+        Daniel de Oliveira
       </router-link>
       <div class="flex items-center gap-6">
         <router-link

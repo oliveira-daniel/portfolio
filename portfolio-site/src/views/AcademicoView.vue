@@ -98,7 +98,7 @@ const aIniciar = computed(() => ori.filter((o: any) => o.situacao === 'A iniciar
         <p class="text-xs text-brand-green font-semibold mb-1">{{ p.ano }} {{ p.qualis !== 'N/A' ? '· Qualis ' + p.qualis : '' }}</p>
         <h3 class="font-semibold text-brand-dark">{{ p.titulo }}</h3>
         <p class="text-sm text-brand-dark/60">{{ p.autores }}</p>
-        <p class="text-xs text-brand-dark/40 mt-1">{{ p.veiculo }}</p>
+        <p class="text-xs text-brand-dark/40 mt-1">{{ p.veiculo }}.</p>
       </GlassCard>
     </div>
   </section>
