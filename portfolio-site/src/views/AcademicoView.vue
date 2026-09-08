@@ -65,6 +65,15 @@ const grupos = [
 ]
 
 type Grupo = (typeof grupos)[number]
+
+const gruposOrdenados = computed(() =>
+  [...grupos].sort((a, b) => {
+    const start = (p: string) => Number(p.split('–')[0])
+    const end = (p: string) => (p.includes('Atual') ? 9999 : Number(p.split('–')[1]))
+    if (start(b.periodo) !== start(a.periodo)) return start(b.periodo) - start(a.periodo)
+    return end(b.periodo) - end(a.periodo)
+  }),
+)
 </script>
 
 <template>
@@ -119,13 +128,17 @@ type Grupo = (typeof grupos)[number]
 
   <div v-else-if="tab === 'publicacoes'">
     <div class="space-y-3">
-      <GlassCard v-for="t in tipos" :key="t">
+      <div
+        v-for="t in tipos"
+        :key="t"
+        class="rounded-2xl border border-brand-green/15 overflow-hidden bg-white/40 backdrop-blur-sm dark:bg-white/[0.04] dark:border-white/10"
+      >
         <button
           @click="toggleSection(t)"
-          class="w-full flex items-center justify-between gap-2 text-left"
+          class="w-full flex items-center justify-between gap-2 text-left px-6 py-4"
         >
           <span class="flex items-center gap-2">
-            <h2 class="text-xl font-bold text-brand-dark">{{ label[t] }}</h2>
+            <h2 class="text-lg font-bold text-brand-dark">{{ label[t] }}</h2>
             <span class="badge badge-yellow">{{ grouped[t].length }}</span>
           </span>
           <ChevronDown
@@ -133,7 +146,7 @@ type Grupo = (typeof grupos)[number]
             :class="openSections.includes(t) ? 'rotate-180' : ''"
           />
         </button>
-        <div v-if="openSections.includes(t)" class="space-y-3 mt-3">
+        <div v-if="openSections.includes(t)" class="px-3 pb-3 space-y-3 border-t border-brand-green/10 dark:border-white/10 pt-3 bg-brand-green/[0.02] dark:bg-white/[0.02]">
           <GlassCard v-for="p in grouped[t]" :key="p.titulo">
             <div class="flex flex-wrap gap-1.5 mb-1">
               <span class="badge badge-green">{{ p.ano }}</span>
@@ -151,7 +164,7 @@ type Grupo = (typeof grupos)[number]
             </div>
           </GlassCard>
         </div>
-      </GlassCard>
+      </div>
     </div>
   </div>
 
@@ -159,7 +172,7 @@ type Grupo = (typeof grupos)[number]
     <section>
       <h2 class="text-xl font-bold text-brand-dark mb-4">Grupos de Pesquisa</h2>
       <div class="space-y-3">
-        <GlassCard v-for="g in grupos" :key="g.nome">
+        <GlassCard v-for="g in gruposOrdenados" :key="g.nome">
           <div class="flex flex-wrap gap-1.5 mb-1">
             <span class="badge badge-green">{{ g.instituicao }}</span>
           </div>
