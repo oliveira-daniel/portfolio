@@ -52,6 +52,32 @@ body::before {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
+.badge {
+  display: inline-block;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+}
+
+.badge-green {
+  background: rgba(81, 142, 69, 0.15);
+  color: #518E45;
+}
+
+.badge-yellow {
+  background: rgba(241, 202, 48, 0.15);
+  color: #b08f0e;
+}
+
+.dark .badge-green {
+  color: #6bcf5a;
+}
+
+.dark .badge-yellow {
+  color: #F1CA30;
+}
+
 .dark .glass {
   background: rgba(15, 23, 42, 0.5);
   border: 1px solid rgba(81, 142, 69, 0.2);

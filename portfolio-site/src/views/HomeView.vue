@@ -88,7 +88,7 @@ const timeline: TimelineItem[] = [
   { ano: 2002, nome: 'Digipro Informática Ltda', papel: 'Sócio-gerente', tipo: 'empresa', periodo: '2002–2014', descricao: 'Lages/SC.' },
   { ano: 2000, nome: 'Universidade do Planalto Catarinense', papel: 'Graduação', tipo: 'formacao', periodo: '2000–2006', descricao: 'Bacharelado em Informática.' },
   { ano: 2008, nome: 'Univali — Universidade do Vale do Itajaí', papel: 'Mestrado', tipo: 'formacao', periodo: '2008–2010', descricao: 'Mestrado em Computação Aplicada.' },
-  { ano: 2011, nome: 'Logística Integrada — otimização e simulação', papel: 'Integrante', tipo: 'pesquisa', periodo: '2011–2018', descricao: 'Localização de centrais de inteligência e redes dinâmicas de transporte.' },
+  { ano: 2011, nome: 'Logística Integrada — otimização e simulação', papel: 'Integrante', tipo: 'pesquisa', periodo: '2011–2013', descricao: 'Localização de centrais de inteligência e redes dinâmicas de transporte.' },
   { ano: 2012, nome: 'UFSC — Universidade Federal de Santa Catarina', papel: 'Doutorado', tipo: 'formacao', periodo: '2012–2017', descricao: 'Engenharia de Produção e Sistemas.' },
   { ano: 2014, nome: 'INSA-Rouen — Institut National des Sciences Appliquées de Rouen', papel: 'Doutorado Sanduíche', tipo: 'formacao', periodo: '2014–2015', descricao: 'Otimização em Transporte e Logística · França.' },
   { ano: 2013, nome: 'LOGÍSTICA HUMANITÁRIA', papel: 'Integrante', tipo: 'pesquisa', periodo: '2013–2018', descricao: 'Transporte dinâmico em situações de emergência, evitando rupturas na rede e ponderando custo x risco de ruptura.' },
