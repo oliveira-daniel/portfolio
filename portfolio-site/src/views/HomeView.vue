@@ -150,7 +150,7 @@ const marcos = [
             <a :href="`mailto:${contato.email}`" title="E-mail" aria-label="Enviar e-mail" class="glass inline-flex items-center justify-center w-10 h-10 rounded-full hover:scale-110 transition-transform">
               <BrandIcon :path="brandIcons.gmail.path" :hex="brandIcons.gmail.hex" label="Gmail" />
             </a>
-            <a :href="contato.cvUrl" title="Baixar CV" aria-label="Baixar CV" class="glass inline-flex items-center justify-center w-10 h-10 rounded-full hover:scale-110 transition-transform">
+            <a :href="contato.cvUrl" target="_blank" rel="noopener" title="Baixar CV" aria-label="Baixar CV" class="glass inline-flex items-center justify-center w-10 h-10 rounded-full hover:scale-110 transition-transform">
               <Download class="w-4 h-4 text-brand-green" />
             </a>
           </div>
@@ -216,7 +216,7 @@ const marcos = [
           <router-link to="/trajetoria" class="inline-flex items-center gap-2 bg-brand-green text-white px-4 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-transform">
             Ver trajetória e currículo <ArrowRight class="w-4 h-4" />
           </router-link>
-          <a :href="contato.cvUrl" class="glass inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform">
+          <a :href="contato.cvUrl" target="_blank" rel="noopener" class="glass inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform">
             <Download class="w-4 h-4" /> Baixar CV
           </a>
         </div>
@@ -417,6 +417,8 @@ const marcos = [
         </a>
         <a
           :href="contato.cvUrl"
+          target="_blank"
+          rel="noopener"
           class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
         >
           <Download class="w-4 h-4" /> Baixar CV

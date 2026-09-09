@@ -22,7 +22,7 @@ import brandIcons from '../data/brand-icons.json'
           <a :href="`mailto:${contato.email}`" class="inline-flex items-center gap-2 text-brand-dark/70 hover:text-brand-dark font-medium">
             <BrandIcon :path="brandIcons.gmail.path" :hex="brandIcons.gmail.hex" label="Gmail" /> {{ contato.email }}
           </a>
-          <a :href="contato.cvUrl" class="inline-flex items-center gap-2 text-brand-dark/70 hover:text-brand-dark font-medium">
+          <a :href="contato.cvUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand-dark/70 hover:text-brand-dark font-medium">
             <Download class="w-4 h-4 text-brand-green" /> Baixar CV
           </a>
         </div>

@@ -135,6 +135,8 @@ const years = computed(() =>
         </a>
         <a
           :href="contato.cvUrl"
+          target="_blank"
+          rel="noopener"
           class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
         >
           <Download class="w-4 h-4" /> Baixar CV
