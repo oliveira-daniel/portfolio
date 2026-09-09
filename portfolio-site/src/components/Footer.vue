@@ -37,7 +37,7 @@ import brandIcons from '../data/brand-icons.json'
             <BrandIcon :path="brandIcons.github.path" label="GitHub" class="brand-github" /> GitHub
           </a>
           <a :href="contato.lattesUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand-dark/70 hover:text-brand-dark font-medium">
-            <BrandIcon :path="brandIcons.lattes.path" :hex="brandIcons.lattes.hex" :viewBox="brandIcons.lattes.viewBox" label="Lattes" /> Lattes
+            <BrandIcon :path="brandIcons.lattes.path" :viewBox="brandIcons.lattes.viewBox" label="Lattes" class="brand-lattes" /> Lattes
           </a>
         </div>
       </div>

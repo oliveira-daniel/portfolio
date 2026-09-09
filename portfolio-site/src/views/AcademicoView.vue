@@ -62,8 +62,8 @@ const concluidas = computed(() => ori.filter((o: any) => o.situacao === 'Conclu�
 const aIniciar = computed(() => ori.filter((o: any) => o.situacao === 'A iniciar'))
 
 const grupos = [
-  { nome: 'GPIAE — IA na Educação', instituicao: 'DEGC/UFSC', periodo: '2025–Atual', descricao: 'Grupo multidisciplinar em Inteligência Artificial na Educação.' },
-  { nome: 'Logística Integrada — otimização e simulação', instituicao: 'UFSC', periodo: '2011–2013', descricao: 'Localização de centrais de inteligência e redes dinâmicas de transporte.' },
+  { nome: 'GPIAE (IA na Educação)', instituicao: 'DEGC/UFSC', periodo: '2025–Atual', descricao: 'Grupo multidisciplinar em Inteligência Artificial na Educação.' },
+  { nome: 'Logística Integrada, otimização e simulação', instituicao: 'UFSC', periodo: '2011–2013', descricao: 'Localização de centrais de inteligência e redes dinâmicas de transporte.' },
   { nome: 'Logística Humanitária', instituicao: 'UFSC', periodo: '2013–2018', descricao: 'Transporte dinâmico em situações de emergência, evitando rupturas na rede e ponderando custo x risco de ruptura.' },
   { nome: 'Tecnologias Digitais e Recursos Didáticos no Ensino de Ciências e Matemática', instituicao: 'Unigranrio', periodo: '2021–Atual', descricao: 'Macroprojeto PPG Ensino de Ciências Unigranrio.' },
   { nome: 'Extração de Informações Implícitas da Web', instituicao: 'Unigranrio', periodo: '2021–2022', descricao: 'QA sobre dados estruturados/não-estruturados; FUNADESP.' },
@@ -123,6 +123,8 @@ const qualisDonut = computed(() => {
 })
 const qualisPalette: Record<string, string> = { A2: '#20372F', A3: '#518E45', A4: '#F1CA30', B2: '#94a3b8' }
 const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPalette[l] ?? '#94a3b8'))
+
+
 </script>
 
 <template>

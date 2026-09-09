@@ -18,6 +18,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
   position: relative;
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 body::before {
@@ -26,17 +27,17 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 600px 400px at 10% 20%, rgba(81, 142, 69, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 90% 80%, rgba(241, 202, 48, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(81, 142, 69, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 700px 450px at 8% 12%, rgba(81, 142, 69, 0.16) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 550px at 92% 85%, rgba(241, 202, 48, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 450px at 50% 45%, rgba(81, 142, 69, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .dark body::before {
   background:
-    radial-gradient(ellipse 600px 400px at 10% 20%, rgba(81, 142, 69, 0.15) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 90% 80%, rgba(241, 202, 48, 0.1) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(81, 142, 69, 0.08) 0%, transparent 70%);
+    radial-gradient(ellipse 700px 450px at 8% 12%, rgba(81, 142, 69, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 550px at 92% 85%, rgba(241, 202, 48, 0.16) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 450px at 50% 45%, rgba(81, 142, 69, 0.12) 0%, transparent 70%);
 }
 
 .dark body {
@@ -49,7 +50,9 @@ body::before {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 .badge {
@@ -81,7 +84,9 @@ body::before {
 .dark .glass {
   background: rgba(15, 23, 42, 0.5);
   border: 1px solid rgba(81, 142, 69, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .dark .text-brand-dark { color: #e5e7eb; }
@@ -100,3 +105,26 @@ body::before {
 /* Ícone do GitHub: preto da marca no tema claro, branco no tema escuro */
 .brand-github { color: #181717; }
 .dark .brand-github { color: #ffffff; }
+
+/* Ícone do Lattes: verde da marca no tema claro, verde claro no tema escuro */
+.brand-lattes { color: #518E45; }
+.dark .brand-lattes { color: #6bcf5a; }
+
+/* Anel de foco visível global para navegação por teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #518E45;
+  outline-offset: 2px;
+}
+
+/* Flutuação suave para o badge sobre a foto */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float-soft 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-float { animation: none; }
+}

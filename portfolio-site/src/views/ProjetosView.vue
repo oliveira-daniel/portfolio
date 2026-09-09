@@ -51,7 +51,8 @@ function linksOf(r: any) {
     <div class="px-3 pb-3 border-t border-brand-green/10 dark:border-white/10 pt-3">
       <div class="grid md:grid-cols-2 gap-4">
         <GlassCard v-for="r in destaques" :key="r.name" class="flex flex-col">
-          <div class="rounded-xl overflow-hidden bg-brand-green/[0.06] border border-brand-green/15 aspect-video flex items-center justify-center mb-3">
+          <!-- Print: preencher `imagem` em portfolio.json para exibir a imagem do projeto -->
+          <div class="rounded-xl overflow-hidden bg-gradient-to-br from-brand-green/10 via-brand-green/[0.04] to-brand-yellow/10 border border-brand-green/15 aspect-video flex items-center justify-center mb-3">
             <img
               v-if="r.imagem"
               :src="r.imagem"
@@ -59,10 +60,10 @@ function linksOf(r: any) {
               class="w-full h-full object-cover"
               loading="lazy"
             />
-            <span v-else class="text-xs text-brand-dark/40 px-4 text-center">Espaço para print</span>
+            <span v-else class="text-3xl font-bold text-brand-green/30 select-none" aria-hidden="true">{{ r.name.charAt(0) }}</span>
           </div>
           <h3 class="font-semibold text-brand-dark">{{ r.name }}</h3>
-          <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || '—' }}</p>
+          <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || 'Descrição em breve.' }}</p>
           <div v-if="r.contexto || r.papel || r.resultado" class="text-sm mt-3 space-y-1">
             <p v-if="r.contexto" class="text-brand-dark/70"><strong>Contexto:</strong> {{ r.contexto }}</p>
             <p v-if="r.papel" class="text-brand-dark/70"><strong>Papel:</strong> {{ r.papel }}</p>
@@ -82,7 +83,7 @@ function linksOf(r: any) {
             >
               {{ l.label }} <ArrowUpRight class="w-3.5 h-3.5" />
             </a>
-            <span v-if="r.cliente || r.instituicao" class="text-xs text-brand-dark/40 ml-auto">{{ r.cliente ?? r.instituicao }}</span>
+            <span v-if="r.cliente || r.instituicao" class="text-xs text-brand-dark/60 ml-auto">{{ r.cliente ?? r.instituicao }}</span>
           </div>
         </GlassCard>
       </div>
@@ -98,7 +99,8 @@ function linksOf(r: any) {
     <div class="px-3 pb-3 border-t border-brand-green/10 dark:border-white/10 pt-3 bg-brand-green/[0.02] dark:bg-white/[0.02]">
     <div class="grid md:grid-cols-2 gap-4">
       <GlassCard v-for="r in porBloco[b]" :key="r.name" class="flex flex-col">
-        <div class="rounded-xl overflow-hidden bg-brand-green/[0.06] border border-brand-green/15 aspect-video flex items-center justify-center mb-3">
+        <!-- Print: preencher `imagem` em portfolio.json para exibir a imagem do projeto -->
+        <div class="rounded-xl overflow-hidden bg-gradient-to-br from-brand-green/10 via-brand-green/[0.04] to-brand-yellow/10 border border-brand-green/15 aspect-video flex items-center justify-center mb-3">
           <img
             v-if="r.imagem"
             :src="r.imagem"
@@ -106,10 +108,10 @@ function linksOf(r: any) {
             class="w-full h-full object-cover"
             loading="lazy"
           />
-          <span v-else class="text-xs text-brand-dark/40 px-4 text-center">Espaço para print</span>
+          <span v-else class="text-3xl font-bold text-brand-green/30 select-none" aria-hidden="true">{{ r.name.charAt(0) }}</span>
         </div>
         <h3 class="font-semibold text-brand-dark">{{ r.name }}</h3>
-        <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || '—' }}</p>
+        <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || 'Descrição em breve.' }}</p>
         <div v-if="r.contexto || r.papel || r.resultado" class="text-sm mt-3 space-y-1">
           <p v-if="r.contexto" class="text-brand-dark/70"><strong>Contexto:</strong> {{ r.contexto }}</p>
           <p v-if="r.papel" class="text-brand-dark/70"><strong>Papel:</strong> {{ r.papel }}</p>
@@ -117,7 +119,7 @@ function linksOf(r: any) {
         </div>
         <div v-if="(r.stack?.length || r.badges?.length || r.periodo)" class="flex flex-wrap items-center gap-1.5 mt-3">
           <span v-for="badge in (r.stack ?? r.badges ?? [])" :key="badge" class="badge badge-green">{{ badge }}</span>
-          <span v-if="r.periodo" class="text-xs text-brand-dark/40 ml-auto">{{ r.periodo }}</span>
+          <span v-if="r.periodo" class="text-xs text-brand-dark/60 ml-auto">{{ r.periodo }}</span>
         </div>
         <div v-if="linksOf(r).length || r.cliente || r.instituicao" class="flex flex-wrap items-center gap-2 mt-auto pt-4">
           <a
@@ -130,7 +132,7 @@ function linksOf(r: any) {
           >
             {{ l.label }} <ArrowUpRight class="w-3.5 h-3.5" />
           </a>
-          <span v-if="r.cliente || r.instituicao" class="text-xs text-brand-dark/40 ml-auto">{{ r.cliente ?? r.instituicao }}</span>
+          <span v-if="r.cliente || r.instituicao" class="text-xs text-brand-dark/60 ml-auto">{{ r.cliente ?? r.instituicao }}</span>
         </div>
       </GlassCard>
     </div>
@@ -147,7 +149,7 @@ function linksOf(r: any) {
     <div class="grid md:grid-cols-2 gap-4">
       <GlassCard v-for="r in experimentais" :key="r.name" class="flex flex-col">
         <h3 class="font-semibold text-brand-dark">{{ r.name }}</h3>
-        <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || '—' }}</p>
+        <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || 'Descrição em breve.' }}</p>
         <div class="flex flex-wrap items-center gap-1.5 mt-auto pt-5">
           <span class="badge badge-green">{{ r.bloco }}</span>
           <span v-for="badge in (r.badges ?? [])" :key="badge" class="badge badge-green">{{ badge }}</span>
