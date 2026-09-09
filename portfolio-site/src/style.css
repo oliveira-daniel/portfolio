@@ -96,3 +96,7 @@ body::before {
 .dark .bg-brand-green { background-color: #518E45; }
 .dark .text-brand-green { color: #6bcf5a; }
 .dark .text-brand-yellow { color: #F1CA30; }
+
+/* Ícone do GitHub: preto da marca no tema claro, branco no tema escuro */
+.brand-github { color: #181717; }
+.dark .brand-github { color: #ffffff; }
