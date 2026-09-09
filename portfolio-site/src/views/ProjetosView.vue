@@ -25,10 +25,6 @@ const porBloco = computed(() => {
   return map
 })
 
-const destaques = computed(() =>
-  (portfolioItems as any[]).filter((r) => r.destaque && !r.experimental),
-)
-
 const experimentais = computed(() => (portfolioItems as any[]).filter((r) => r.experimental))
 
 function linksOf(r: any) {
@@ -44,54 +40,6 @@ function linksOf(r: any) {
 <template>
   <h1 class="text-3xl font-bold text-brand-dark mb-2">Portfólio</h1>
   <p class="text-brand-dark/60 mb-2">Projetos que conectam IA aplicada, produto, automação e pesquisa com problemas reais.</p>
-
-  <section v-if="destaques.length" class="mt-6 rounded-2xl border border-brand-yellow/40 overflow-hidden bg-brand-yellow/[0.06] dark:bg-white/[0.04] dark:border-white/10">
-    <h2 class="text-xl font-bold text-brand-dark px-6 py-4 flex items-center gap-2">
-      Destaques
-      <span class="badge badge-yellow">{{ destaques.length }}</span>
-      <Star class="w-5 h-5 text-brand-yellow ml-auto shrink-0" />
-    </h2>
-    <div class="px-3 pb-3 border-t border-brand-green/10 dark:border-white/10 pt-3">
-      <div class="grid md:grid-cols-2 gap-4">
-        <GlassCard v-for="r in destaques" :key="r.name" class="flex flex-col">
-          <!-- Print: preencher `imagem` em portfolio.json para exibir a imagem do projeto -->
-          <div class="rounded-xl overflow-hidden bg-gradient-to-br from-brand-green/10 via-brand-green/[0.04] to-brand-yellow/10 border border-brand-green/15 aspect-video flex items-center justify-center mb-3">
-            <img
-              v-if="r.imagem"
-              :src="r.imagem"
-              :alt="`Print do projeto ${r.name}`"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <span v-else class="text-3xl font-bold text-brand-green/30 select-none" aria-hidden="true">{{ r.name.charAt(0) }}</span>
-          </div>
-          <h3 class="font-semibold text-brand-dark">{{ r.name }}</h3>
-          <p class="text-sm text-brand-dark/60 mt-1">{{ r.description || 'Descrição em breve.' }}</p>
-          <div v-if="r.contexto || r.papel || r.resultado" class="text-sm mt-3 space-y-1">
-            <p v-if="r.contexto" class="text-brand-dark/70"><strong>Contexto:</strong> {{ r.contexto }}</p>
-            <p v-if="r.papel" class="text-brand-dark/70"><strong>Papel:</strong> {{ r.papel }}</p>
-            <p v-if="r.resultado" class="text-brand-dark/70"><strong>Resultado:</strong> {{ r.resultado }}</p>
-          </div>
-          <div v-if="(r.stack?.length || r.badges?.length)" class="flex flex-wrap gap-1.5 mt-3">
-            <span v-for="s in (r.stack ?? r.badges ?? [])" :key="s" class="badge badge-green">{{ s }}</span>
-          </div>
-          <div class="flex flex-wrap items-center gap-2 mt-auto pt-4">
-            <a
-              v-for="l in linksOf(r)"
-              :key="l.label"
-              :href="l.url"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-brand-green hover:underline"
-            >
-              {{ l.label }} <ArrowUpRight class="w-3.5 h-3.5" />
-            </a>
-            <span v-if="r.cliente || r.instituicao" class="text-xs text-brand-dark/60 ml-auto">{{ r.cliente ?? r.instituicao }}</span>
-          </div>
-        </GlassCard>
-      </div>
-    </div>
-  </section>
 
   <section v-for="b in blocos" :key="b" class="mt-10 first:mt-6 rounded-2xl border border-brand-green/15 overflow-hidden bg-white/40 backdrop-blur-sm dark:bg-white/[0.04] dark:border-white/10">
     <h2 class="text-xl font-bold text-brand-dark px-6 py-4 flex items-center gap-2">
@@ -120,11 +68,12 @@ function linksOf(r: any) {
           <p v-if="r.papel" class="text-brand-dark/70"><strong>Papel:</strong> {{ r.papel }}</p>
           <p v-if="r.resultado" class="text-brand-dark/70"><strong>Resultado:</strong> {{ r.resultado }}</p>
         </div>
-        <div v-if="(r.stack?.length || r.badges?.length || r.periodo)" class="flex flex-wrap items-center gap-1.5 mt-3">
+        <div v-if="(r.stack?.length || r.badges?.length || r.periodo || r.destaque)" class="flex flex-wrap items-center gap-1.5 mt-auto pt-3">
           <span v-for="badge in (r.stack ?? r.badges ?? [])" :key="badge" class="badge badge-green">{{ badge }}</span>
-          <span v-if="r.periodo" class="text-xs text-brand-dark/60 ml-auto">{{ r.periodo }}</span>
+          <span v-if="r.periodo" class="text-xs text-brand-dark/60">{{ r.periodo }}</span>
+          <Star v-if="r.destaque" class="w-4 h-4 text-brand-yellow ml-auto shrink-0" role="img" aria-label="Projeto em destaque" title="Projeto em destaque" />
         </div>
-        <div v-if="linksOf(r).length || r.cliente || r.instituicao" class="flex flex-wrap items-center gap-2 mt-auto pt-4">
+        <div v-if="linksOf(r).length || r.cliente || r.instituicao" class="flex flex-wrap items-center gap-2 pt-2">
           <a
             v-for="l in linksOf(r)"
             :key="l.label"
