@@ -162,15 +162,15 @@ const years = [...new Set([...timeline.map((t) => t.ano), ...Object.keys(pubCoun
   <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
     <GlassCard>
       <h3 class="font-bold text-brand-dark mb-2">Soluções em IA & Otimização</h3>
-      <p class="text-sm text-brand-dark/60">LLMs, agentes, RAG, sistemas neuro-fuzzy, algoritmos genéticos, GRASP, redes de fluxo.</p>
+      <p class="text-sm text-brand-dark/60">Aplicação de técnicas de IA diversas, como LLMs, agentes inteligentes, RAG, sistemas neuro-fuzzy, algoritmos genéticos, fluxo em redes de transporte.</p>
     </GlassCard>
     <GlassCard>
       <h3 class="font-bold text-brand-dark mb-2">Plataformas & Automação</h3>
-      <p class="text-sm text-brand-dark/60">Desenvolvimento de plataformas web, pipelines n8n, dashboards, crawlers, storyboards com IA.</p>
+      <p class="text-sm text-brand-dark/60">Desenvolvimento de plataformas web, pipelines de agentes inteligentes, dashboards, crawlers, storyboards com IA.</p>
     </GlassCard>
     <GlassCard>
       <h3 class="font-bold text-brand-dark mb-2">Frentes de Atuação</h3>
-      <p class="text-sm text-brand-dark/60">Saúde & Bem-estar, Transporte & Logística, Concessões Públicas, Educação.</p>
+      <p class="text-sm text-brand-dark/60">Sistemas para Transporte & Logística, Concessões Públicas, Educação, Ensino e Saúde/Bem-estar.</p>
     </GlassCard>
   </section>
 

@@ -41,5 +41,5 @@ Cases por frente: Saúde & Bem-estar, Transporte & Logística, Educação. Repos
 
 - IA Aplicada de forma Criativa e Resolutiva.
 - Soluções de Inteligência Aplicada ao Ensino.
-- 
+- Uma pessoa multi alguma coisa
 
