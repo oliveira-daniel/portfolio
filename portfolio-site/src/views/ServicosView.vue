@@ -123,7 +123,7 @@ const passos = [
   </section>
 
   <section>
-    <GlassCard class="!p-8 text-center">
+    <GlassCard padding="p-8" class="text-center">
       <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos conversar sobre seu projeto</h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
         Conte o problema que você quer resolver e receba uma avaliação inicial sem compromisso.

@@ -26,6 +26,11 @@ const data = computed(() => ({
   ],
 }))
 
+const summary = computed(
+  () =>
+    `${props.title}: ${props.labels.map((l, i) => `${l} ${props.values[i]}`).join(', ')}. Total: ${props.values.reduce((a, b) => a + b, 0)}.`,
+)
+
 const isDark = ref(false)
 onMounted(() => {
   const update = () => (isDark.value = document.documentElement.classList.contains('dark'))
@@ -63,8 +68,11 @@ const options = computed(() => ({
       {{ title }}
       <span class="badge badge-yellow">{{ values.reduce((a, b) => a + b, 0) }}</span>
     </h3>
-    <div class="w-full max-w-[260px]">
+    <div class="w-full max-w-[260px]" role="img" :aria-label="summary">
       <Doughnut :data="data" :options="(options as any)" />
     </div>
+    <ul class="sr-only">
+      <li v-for="(l, i) in labels" :key="l">{{ l }}: {{ values[i] }}</li>
+    </ul>
   </div>
 </template>

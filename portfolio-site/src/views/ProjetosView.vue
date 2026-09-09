@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Brain, BusFront, FlaskConical, GraduationCap, Workflow, ArrowUpRight, Star } from 'lucide-vue-next'
+import { Brain, BusFront, FlaskConical, GraduationCap, Workflow, ArrowUpRight, Star } from '@lucide/vue'
 import GlassCard from '../components/GlassCard.vue'
 import BrandIcon from '../components/BrandIcon.vue'
 import portfolioItems from '../data/portfolio.json'
@@ -112,7 +112,7 @@ function linksOf(r: any) {
   </section>
 
   <section class="mt-10">
-    <GlassCard class="!p-8 text-center">
+    <GlassCard padding="p-8" class="text-center">
       <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos conversar sobre seu desafio</h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
         Se algum desses projetos se parece com o problema que você quer resolver, fale comigo.

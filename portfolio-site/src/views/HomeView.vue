@@ -103,7 +103,7 @@ const marcos = [
   <section class="mb-12 relative">
     <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-10 w-64 h-64 rounded-full bg-[#518E45]/20 blur-3xl"></div>
     <div aria-hidden="true" class="pointer-events-none absolute -bottom-16 -right-8 w-72 h-72 rounded-full bg-[#F1CA30]/25 blur-3xl"></div>
-    <GlassCard class="!p-6 md:!p-8 relative">
+    <GlassCard padding="p-6 md:p-8" class="relative">
       <div class="grid gap-8 md:grid-cols-[1.6fr_1fr] md:items-start">
         <div>
           <p class="text-xs font-bold uppercase tracking-widest text-brand-green mb-3">
@@ -179,7 +179,7 @@ const marcos = [
   <!-- 2. FAIXA DE PROVAS -->
   <section class="mb-12" aria-label="Provas rápidas">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-      <GlassCard v-for="(p, i) in provas" :key="p.valor" class="!p-4 text-center" :class="i === provas.length - 1 ? 'col-span-2 md:col-span-1' : ''">
+      <GlassCard v-for="(p, i) in provas" :key="p.valor" padding="p-4" class="text-center" :class="i === provas.length - 1 ? 'col-span-2 md:col-span-1' : ''">
         <p class="font-bold text-brand-dark text-sm md:text-base">{{ p.valor }}</p>
         <p class="text-xs text-brand-dark/60 mt-1">{{ p.rotulo }}</p>
       </GlassCard>
@@ -358,7 +358,7 @@ const marcos = [
     <h2 class="text-2xl font-bold text-brand-dark mb-2">Trajetória selecionada</h2>
     <p class="text-brand-dark/60 mb-4">Uma carreira construída na interseção entre tecnologia, inovação, ensino e pesquisa.</p>
     <div class="grid md:grid-cols-2 gap-4">
-      <GlassCard v-for="m in marcos" :key="m.titulo" class="!p-5">
+      <GlassCard v-for="m in marcos" :key="m.titulo" padding="p-5">
         <p class="text-xs font-bold uppercase tracking-wider text-brand-green">{{ m.ano }}</p>
         <h3 class="font-semibold text-brand-dark mt-1">{{ m.titulo }}</h3>
         <p class="text-sm text-brand-dark/60 mt-1">{{ m.texto }}</p>
@@ -394,7 +394,7 @@ const marcos = [
 
   <!-- 10. CTA FINAL -->
   <section>
-    <GlassCard class="!p-8 text-center">
+    <GlassCard padding="p-8" class="text-center">
       <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos conversar</h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
         Se você procura apoio em IA aplicada, automação, produto ou pesquisa com foco em entrega

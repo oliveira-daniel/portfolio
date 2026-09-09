@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { BookOpenText, Building2, CalendarDays, ChevronDown, Download, Info, Users } from 'lucide-vue-next'
+import { BookOpenText, Building2, CalendarDays, ChevronDown, Download, Info, Users } from '@lucide/vue'
 import GlassCard from '../components/GlassCard.vue'
 import BrandIcon from '../components/BrandIcon.vue'
 import DonutChart from '../components/DonutChart.vue'
@@ -9,14 +9,38 @@ import brandIcons from '../data/brand-icons.json'
 import pubs from '../data/publicacoes-ultimos-5-anos.json'
 import ori from '../data/orientacoes.json'
 
-const tab = ref<'geral' | 'publicacoes' | 'orientacoes' | 'grupos'>('geral')
+type TabId = 'geral' | 'publicacoes' | 'orientacoes' | 'grupos'
 
-const tabs = [
+const tab = ref<TabId>('geral')
+
+const tabs: { id: TabId; label: string }[] = [
   { id: 'geral', label: 'Visão Geral' },
   { id: 'publicacoes', label: 'Publicações' },
   { id: 'orientacoes', label: 'Orientações' },
   { id: 'grupos', label: 'Grupos de Pesquisa' },
 ]
+
+const tablistRef = ref<HTMLElement | null>(null)
+
+function focusTab(i: number) {
+  requestAnimationFrame(() => {
+    tablistRef.value?.querySelectorAll<HTMLElement>('[role="tab"]')[i]?.focus()
+  })
+}
+
+function onTabKeydown(e: KeyboardEvent, i: number) {
+  const key = e.key
+  const last = tabs.length - 1
+  let next: number | null = null
+  if (key === 'ArrowRight') next = i === last ? 0 : i + 1
+  else if (key === 'ArrowLeft') next = i === 0 ? last : i - 1
+  else if (key === 'Home') next = 0
+  else if (key === 'End') next = last
+  if (next === null) return
+  e.preventDefault()
+  tab.value = tabs[next].id
+  focusTab(next)
+}
 
 const artigos = computed(() => pubs.filter((p: any) => p.tipo === 'artigo'))
 const artigosSemC = computed(() => artigos.value.filter((p: any) => p.qualis !== 'C'))
@@ -133,11 +157,17 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
 <template>
   <h1 class="text-3xl font-bold text-brand-dark mb-2">Acadêmico</h1>
 
-  <div class="flex gap-2 mb-8 mt-6 flex-wrap">
+  <div ref="tablistRef" class="flex gap-2 mb-8 mt-6 flex-wrap" role="tablist" aria-label="Seções acadêmicas">
     <button
-      v-for="t in tabs"
+      v-for="(t, i) in tabs"
       :key="t.id"
+      :id="`tab-${t.id}`"
+      role="tab"
+      :aria-selected="tab === t.id"
+      :aria-controls="`panel-${t.id}`"
+      :tabindex="tab === t.id ? 0 : -1"
       @click="tab = t.id"
+      @keydown="onTabKeydown($event, i)"
       class="px-4 py-2 rounded-full text-sm font-semibold transition-colors"
       :class="tab === t.id
         ? 'bg-brand-green text-white'
@@ -147,7 +177,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
     </button>
   </div>
 
-  <div v-if="tab === 'geral'">
+  <div v-if="tab === 'geral'" id="panel-geral" role="tabpanel" aria-labelledby="tab-geral" tabindex="0">
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <DonutChart title="Publicações*" :labels="pubDonut.labels" :values="pubDonut.values" :colors="pubColors" />
       <DonutChart title="Publicações no Extrato Qualis*" :labels="qualisDonut.labels" :values="qualisDonut.values" :colors="qualisColors" />
@@ -157,7 +187,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
     <p class="text-xs text-brand-dark/40 mt-3">* Publicações dos últimos 5 anos</p>
   </div>
 
-  <div v-else-if="tab === 'publicacoes'">
+  <div v-else-if="tab === 'publicacoes'" id="panel-publicacoes" role="tabpanel" aria-labelledby="tab-publicacoes" tabindex="0">
     <p class="text-sm text-brand-dark/60 mb-4">Publicações dos últimos 5 anos</p>
     <div class="space-y-3">
       <div
@@ -167,6 +197,8 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
       >
         <button
           @click="toggleSection(t)"
+          :aria-expanded="openSections.includes(t)"
+          :aria-controls="`pubsec-${t}`"
           class="w-full flex items-center justify-between gap-2 text-left px-6 py-4"
         >
           <span class="flex items-center gap-2">
@@ -178,7 +210,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
             :class="openSections.includes(t) ? 'rotate-180' : ''"
           />
         </button>
-        <div v-if="openSections.includes(t)" class="px-3 pb-3 space-y-3 border-t border-brand-green/10 dark:border-white/10 pt-3 bg-brand-green/[0.02] dark:bg-white/[0.02]">
+        <div v-if="openSections.includes(t)" :id="`pubsec-${t}`" class="px-3 pb-3 space-y-3 border-t border-brand-green/10 dark:border-white/10 pt-3 bg-brand-green/[0.02] dark:bg-white/[0.02]">
           <GlassCard v-for="p in (displayGrouped as any)[t]" :key="p.titulo">
             <div class="flex flex-wrap gap-1.5 mb-1">
               <span class="badge badge-green">{{ p.ano }}</span>
@@ -200,7 +232,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
     </div>
   </div>
 
-  <div v-else-if="tab === 'grupos'">
+  <div v-else-if="tab === 'grupos'" id="panel-grupos" role="tabpanel" aria-labelledby="tab-grupos" tabindex="0">
     <section>
       <h2 class="text-xl font-bold text-brand-dark mb-4">Grupos de Pesquisa</h2>
       <div class="space-y-3">
@@ -222,7 +254,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
     </section>
   </div>
 
-  <div v-else>
+  <div v-else id="panel-orientacoes" role="tabpanel" aria-labelledby="tab-orientacoes" tabindex="0">
     <section>
       <h2 class="text-xl font-bold text-brand-dark mb-4">Orientações de Mestrado</h2>
       <div class="space-y-3">
@@ -247,7 +279,7 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
   </div>
 
   <section class="mt-12">
-    <GlassCard class="!p-8 text-center">
+    <GlassCard padding="p-8" class="text-center">
       <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos colaborar em pesquisa</h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
         Para orientações, parcerias de pesquisa ou projetos com base científica, estes são os melhores canais.

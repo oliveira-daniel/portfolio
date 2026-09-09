@@ -119,7 +119,7 @@ const years = computed(() =>
   </section>
 
   <section>
-    <GlassCard class="!p-8 text-center">
+    <GlassCard padding="p-8" class="text-center">
       <h2 class="text-2xl font-bold text-brand-dark mb-2">Quer saber mais?</h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
         O currículo completo está no Lattes, ou fale comigo direto pelos canais abaixo.
