@@ -1,0 +1,103 @@
+[
+  {
+    "name": "MAGMA Framework (Multi-Agent Generative Microlearning Architecture)",
+    "description": "Plataforma e Framework para autoria de materiais didáticos multimidias, cursos, trilhas e módulos com técnicas de microlearning, adaptativo multi-domínio.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "=Plux",
+    "description": "Arquitetura multi-agentes aplicada para desenho de produtos e serviços, através de redes pert/cpm, criação de plano de trabalho e gerenciamento de projetos integrado ao OpenProject.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "deep_research",
+    "description": "Ferramenta para pesquisa profunda na Web e análise de dados com IA.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "home-routine-tracker",
+    "description": "Sistema de rastreamento de rotina doméstica com IA.",
+    "category": "Saúde & Bem-estar"
+  },
+  {
+    "name": "cosmic-ppt-gen",
+    "description": "Gerador de slides de apresentação em PowerPoint com IA.",
+    "category": "Automação & Workflows"
+  },
+  {
+    "name": "Analise-viagens",
+    "description": "Algoritmos para análise de viagens e cálculo do número de frota mínima para operar o sistema de transporte público.",
+    "category": "Transporte & Logística"
+  },
+  {
+    "name": "Prontuario Digital Automatizado",
+    "description": "Sistema de prontuário digital, anamese para terapeutas ocupacionais, fonoaudiólogas e psicólogas.",
+    "category": "Saúde & Bem-estar"
+  },
+  {
+    "name": "OncoCore",
+    "description": "Produto educacional baseado em evidências científicas que sistematiza cuidados estéticos seguros e humanizados no contexto da oncologia. Não substitui a consulta clínica, mas atua como instrumento complementar de orientação e ensino, em consonância com a Resolução nº 466/2012 do Conselho Nacional de Saúde.",
+    "category": "Saúde & Bem-estar"
+  },
+  {
+    "name": "Radar-Concessoes",
+    "description": "Plataforma de inteligência de mercado para o setor de concessões públicas, impulsada por agentes de IA.",
+    "category": "Transporte & Logística"
+  },
+  {
+    "name": "Fuzzy Logic Blueprint",
+    "description": "Ferramenta para geração de bases de conhecimentos Fuzzy.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "Neuro-fuzzy Studio",
+    "description": "Implementação completa de um sistema neuro-fuzzy adaptativo (ANFIS) aplicado à Qualificação de projetos de transporte público urbano.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "gerador_historias",
+    "description": "Este projeto é um gerador de histórias de horror curtas que utiliza um sistema multiagentes e LLMs para ideação, criação de roteiros, prompts para imagens e narração.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "Experimentos-RN",
+    "description": "Este repositório reúne diversos experimentos pessoais relacionados a ciência de dados, aprendizado de máquina e redes neurais. O objetivo é explorar técnicas, testar ideias, consolidar aprendizados e compartilhar exemplos práticos de análise e modelagem de dados.",
+    "category": "Machine Learning & AI"
+  },
+  {
+    "name": "Fábrica de Soluções",
+    "description": "A Fábrica de Soluções é a divisão de tecnologia educacional da Profuzzy Consultoria e Projetos. Trazemos a solidez e a experiência de uma consultoria consolidada para o universo do ensino, garantindo que seu projeto tenha não apenas excelência técnica, mas também uma base estratégica robusta.",
+    "category": "Educação & Laboratórios"
+  },
+  {
+    "name": "curador-digital-unigranrio",
+    "description": "Prova de conceito para curadoria e geração de conteúdos automatizada.",
+    "category": "Educação & Laboratórios"
+  },
+  {
+    "name": "Cloud STEAM",
+    "description": "Laboratório virtual multidisciplinar em nuvem mantido pela UNIGRANRIO que possiblita aos alunos dos cursos de graduação presencial e à distância realizarem remotamente atividades práticas típicas de um laboratório presencial.",
+    "category": "Educação & Laboratórios"
+  },
+  {
+    "name": "ARVisualization",
+    "description": "Sistema VR para visualização de ambientes, jogos e simulações em realidade aumentada aplicadas ao ensino.",
+    "category": "Jogos & GameDev"
+  },
+  {
+    "name": "Projeto AICT — Agência de Inteligência Contra Terrorismo",
+    "description": "Ambiente de aprendizagem mesclando storytelling, gamificação e sala de aula invertida, visando o desenvolvimento de competências relacionadas à prática de conteúdos de computação e informática.",
+    "category": "Educação & Laboratórios"
+  },
+  {
+    "name": "Missile Command Remake (Loading 2019-1)",
+    "description": "Batalha de Programação: sua nação está sob pressão da guerra e a sua missão é ajudar na prevenção de um possível ataque. Você deve escrever um programa responsável por controlar a inteligência artificial da bateria antiaérea. Seu algoritmo deve ser inteligente o suficiente para lidar com os recursos limitados que a situação representa.",
+    "category": "Educação & Laboratórios"
+  },
+  {
+    "name": "Dynamic Transport Network Prototype v2 / Dynamic Transport System Simulator Beta",
+    "description": "Protótipo e simulador de rede dinâmica de transporte para crise rodoviária (tese de doutorado).",
+    "category": "Transporte & Logística",
+    "periodo": "2013–2018"
+  }
+]
