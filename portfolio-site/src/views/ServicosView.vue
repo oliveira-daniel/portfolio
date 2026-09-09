@@ -6,7 +6,6 @@ import {
   BarChart3,
   Bot,
   ClipboardList,
-  Download,
   FlaskConical,
   GraduationCap,
   Handshake,
@@ -97,8 +96,15 @@ const passos = [
   <section class="mb-12">
     <h2 class="text-2xl font-bold text-brand-dark mb-2">Frentes de atuação</h2>
     <p class="text-brand-dark/60 mb-4">Setores onde essas soluções já foram aplicadas.</p>
-    <div class="flex flex-wrap gap-2">
-      <span v-for="f in frentes" :key="f" class="badge badge-yellow">{{ f }}</span>
+    <div class="grid gap-4 md:grid-cols-[1.6fr_1fr] md:items-center">
+      <div class="flex flex-wrap gap-2">
+        <span v-for="f in frentes" :key="f" class="badge badge-yellow">{{ f }}</span>
+      </div>
+      <div class="flex md:justify-end">
+        <router-link to="/projetos" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:underline">
+          Ver casos no portfólio <ArrowRight class="w-4 h-4" />
+        </router-link>
+      </div>
     </div>
   </section>
 
@@ -137,16 +143,7 @@ const passos = [
         >
           <BrandIcon :path="brandIcons.gmail.path" :hex="brandIcons.gmail.hex" label="Gmail" /> {{ contato.email }}
         </a>
-        <a
-          :href="contato.cvUrl"
-          class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
-        >
-          <Download class="w-4 h-4" /> Baixar CV
-        </a>
       </div>
-      <router-link to="/projetos" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:underline mt-6">
-        Ver casos no portfólio <ArrowRight class="w-4 h-4" />
-      </router-link>
     </GlassCard>
   </section>
 </template>

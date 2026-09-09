@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { BookOpenText, Building2, CalendarDays, ChevronDown, Info, Users } from 'lucide-vue-next'
+import { BookOpenText, Building2, CalendarDays, ChevronDown, Download, Info, Users } from 'lucide-vue-next'
 import GlassCard from '../components/GlassCard.vue'
+import BrandIcon from '../components/BrandIcon.vue'
 import DonutChart from '../components/DonutChart.vue'
+import contato from '../data/contato.json'
+import brandIcons from '../data/brand-icons.json'
 import pubs from '../data/publicacoes-ultimos-5-anos.json'
 import ori from '../data/orientacoes.json'
 
@@ -242,4 +245,37 @@ const qualisColors = computed(() => qualisDonut.value.labels.map((l) => qualisPa
       </div>
     </section>
   </div>
+
+  <section class="mt-12">
+    <GlassCard class="!p-8 text-center">
+      <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos colaborar em pesquisa</h2>
+      <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
+        Para orientações, parcerias de pesquisa ou projetos com base científica, estes são os melhores canais.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a
+          :href="contato.whatsappLink"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-transform"
+        >
+          <BrandIcon :path="brandIcons.whatsapp.path" hex="FFFFFF" label="WhatsApp" /> Chamar no WhatsApp
+        </a>
+        <a
+          :href="contato.cvUrl"
+          class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
+        >
+          <Download class="w-4 h-4" /> Baixar CV
+        </a>
+        <a
+          :href="contato.lattesUrl"
+          target="_blank"
+          rel="noopener"
+          class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
+        >
+          <BrandIcon :path="brandIcons.lattes.path" :viewBox="brandIcons.lattes.viewBox" label="Lattes" class="brand-lattes" /> Lattes
+        </a>
+      </div>
+    </GlassCard>
+  </section>
 </template>

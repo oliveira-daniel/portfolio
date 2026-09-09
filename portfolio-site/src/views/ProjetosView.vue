@@ -2,7 +2,10 @@
 import { computed } from 'vue'
 import { Brain, BusFront, FlaskConical, GraduationCap, Workflow, ArrowUpRight, Star } from 'lucide-vue-next'
 import GlassCard from '../components/GlassCard.vue'
+import BrandIcon from '../components/BrandIcon.vue'
 import portfolioItems from '../data/portfolio.json'
+import contato from '../data/contato.json'
+import brandIcons from '../data/brand-icons.json'
 
 const blocos = ['IA Aplicada', 'Produtos Educacionais', 'Transporte Urbano', 'Automações']
 
@@ -157,5 +160,30 @@ function linksOf(r: any) {
       </GlassCard>
     </div>
     </div>
+  </section>
+
+  <section class="mt-10">
+    <GlassCard class="!p-8 text-center">
+      <h2 class="text-2xl font-bold text-brand-dark mb-2">Vamos conversar sobre seu desafio</h2>
+      <p class="text-brand-dark/70 max-w-2xl mx-auto mb-6">
+        Se algum desses projetos se parece com o problema que você quer resolver, fale comigo.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a
+          :href="contato.whatsappLink"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-transform"
+        >
+          <BrandIcon :path="brandIcons.whatsapp.path" hex="FFFFFF" label="WhatsApp" /> Chamar no WhatsApp
+        </a>
+        <a
+          :href="`mailto:${contato.email}`"
+          class="glass inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-brand-green hover:scale-[1.03] transition-transform"
+        >
+          <BrandIcon :path="brandIcons.gmail.path" :hex="brandIcons.gmail.hex" label="Gmail" /> {{ contato.email }}
+        </a>
+      </div>
+    </GlassCard>
   </section>
 </template>

@@ -14,8 +14,8 @@ const open = ref(false)
 
 const links = [
   { path: '/', label: 'Início' },
-  { path: '/projetos', label: 'Portfólio' },
   { path: '/servicos', label: 'Serviços' },
+  { path: '/projetos', label: 'Portfólio' },
   { path: '/academico', label: 'Acadêmico' },
   { path: '/blog', label: 'Blog' },
 ]
