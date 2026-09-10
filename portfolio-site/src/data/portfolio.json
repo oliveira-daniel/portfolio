@@ -84,7 +84,7 @@
     "confidencial": false
   },
   {
-    "name": "OncoCore",
+    "name": "OncoCare",
     "description": "Produto educacional baseado em evidências científicas que sistematiza cuidados estéticos seguros e humanizados no contexto da oncologia. Não substitui a consulta clínica, mas atua como instrumento complementar de orientação e ensino, em consonância com a Resolução nº 466/2012 do Conselho Nacional de Saúde.",
     "bloco": "Produtos Educacionais",
     "badges": ["Saúde", "Oncologia"],
