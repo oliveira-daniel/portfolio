@@ -295,7 +295,7 @@ const marcos = [
   <!-- 6. STACK PRINCIPAL -->
   <section class="mb-12">
     <h2 class="text-2xl font-bold text-brand-dark mb-2">Stack principal</h2>
-    <p class="text-brand-dark/60 mb-4">Recorte enxuto das tecnologias que mais.</p>
+    <p class="text-brand-dark/60 mb-4">Recorte enxuto das tecnologias que mais uso.</p>
     <GlassCard>
       <div class="grid gap-6 md:grid-cols-4">
         <div v-for="(g, i) in stackPrincipal" :key="g.group" :class="i === 0 ? 'md:col-span-2' : ''">
