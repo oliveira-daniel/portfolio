@@ -1,6 +1,6 @@
 # Portfólio Pessoal — Daniel de Oliveira
 
-Site de portfólio profissional desenvolvido para apresentar experiências, projetos e contato.
+Site de portfólio profissional desenvolvido com Vue 3, Vite e TailwindCSS.
 
 ![GitHub Pages](https://img.shields.io/badge/Hosted-GitHub_Pages-blue?logo=github-pages)
 ![Framework](https://img.shields.io/badge/Framework-Vue_3-green?logo=vue.js)
@@ -13,13 +13,13 @@ Site de portfólio profissional desenvolvido para apresentar experiências, proj
 
 O site está hospedado em:
 
-- **GitHub Pages**: [https://oliveira-daniel.github.io/portfolio-site/](https://oliveira-daniel.github.io/portfolio-site/)
+- **GitHub Pages**: [https://oliveira-daniel.github.io/portfolio/](https://oliveira-daniel.github.io/portfolio/)
 
 ---
 
 ## 📋 Visão Geral
 
-Este projeto é um site de portfólio pessoal construído com tecnologias modernas de frontend. Ele apresenta:
+Site de portfólio pessoal construído com tecnologias modernas de frontend. Apresenta:
 
 - **Home** — Introdução e resumo profissional
 - **Trajetória** — Histórico de formação e experiência
@@ -49,46 +49,55 @@ Este projeto é um site de portfólio pessoal construído com tecnologias modern
 ## 📁 Estrutura do Projeto
 
 ```
-portfolio-site/
-├── public/                  # Assets estáticos (fotos, ícones, PDFs)
-│   ├── favicon.svg
-│   ├── og-cover.png
-│   └── cv-daniel-oliveira.pdf
-├── src/
-│   ├── components/          # Componentes reutilizáveis
-│   │   ├── NavBar.vue
-│   │   ├── Footer.vue
-│   │   ├── GlassCard.vue
-│   │   ├── TechBadge.vue
-│   │   ├── DonutChart.vue
-│   │   └── QualisChart.vue
-│   ├── views/               # Páginas do site
-│   │   ├── HomeView.vue
-│   │   ├── TrajetoriaView.vue
-│   │   ├── ServicosView.vue
-│   │   ├── ProjetosView.vue
-│   │   ├── BlogView.vue
-│   │   └── AcademicoView.vue
-│   ├── data/                # Dados do portfólio (JSON)
-│   │   ├── portfolio.json
-│   │   ├── projetos.json
-│   │   ├── contato.json
-│   │   ├── tech-icons.json
-│   │   └── publicacoes-*.json
-│   ├── router/
-│   │   └── index.ts         # Configuração de rotas
-│   ├── style.css            # Estilos globais
-│   └── main.ts              # Ponto de entrada
-├── scripts/
-│   └── gen_cv.py            # Gera PDF do currículo
-├── dist/                    # Build de produção (gerado)
-├── index.html               # HTML base
-├── vite.config.ts           # Configuração do Vite
-├── tsconfig.json            # Configuração do TypeScript
-├── package.json
-└── .github/
-    └── workflows/
-        └── deploy.yml       # CI/CD para GitHub Pages
+portfolio/
+├── portfolio-site/                  # Frontend do portfólio
+│   ├── public/                      # Assets estáticos (fotos, ícones, PDFs)
+│   │   ├── favicon.svg
+│   │   ├── og-cover.png
+│   │   └── cv-daniel-oliveira.pdf
+│   ├── src/
+│   │   ├── components/              # Componentes reutilizáveis
+│   │   │   ├── NavBar.vue
+│   │   │   ├── Footer.vue
+│   │   │   ├── GlassCard.vue
+│   │   │   ├── TechBadge.vue
+│   │   │   ├── DonutChart.vue
+│   │   │   └── QualisChart.vue
+│   │   ├── views/                   # Páginas do site
+│   │   │   ├── HomeView.vue
+│   │   │   ├── TrajetoriaView.vue
+│   │   │   ├── ServicosView.vue
+│   │   │   ├── ProjetosView.vue
+│   │   │   ├── BlogView.vue
+│   │   │   └── AcademicoView.vue
+│   │   ├── data/                    # Dados do portfólio (JSON)
+│   │   │   ├── portfolio.json
+│   │   │   ├── projetos.json
+│   │   │   ├── contato.json
+│   │   │   ├── tech-icons.json
+│   │   │   └── publicacoes-*.json
+│   │   ├── router/
+│   │   │   └── index.ts             # Configuração de rotas
+│   │   ├── style.css                # Estilos globais
+│   │   └── main.ts                  # Ponto de entrada
+│   ├── scripts/
+│   │   └── gen_cv.py                # Gera PDF do currículo
+│   ├── dist/                        # Build de produção (gerado)
+│   ├── index.html                   # HTML base
+│   ├── vite.config.ts               # Configuração do Vite
+│   ├── tsconfig.json                # Configuração do TypeScript
+│   ├── package.json
+│   └── public/404.html              # Fallback para SPA routing
+├── conteudos-site/
+├── curriculos/
+├── dados/
+├── modelos-design/
+├── python/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml               # CI/CD para GitHub Pages
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -104,8 +113,8 @@ portfolio-site/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/oliveira-daniel/portfolio-site.git
-cd portfolio-site
+git clone https://github.com/oliveira-daniel/portfolio.git
+cd portfolio/portfolio-site
 
 # Instale as dependências
 npm install
@@ -137,13 +146,13 @@ npm run cv
 O projeto utiliza **GitHub Actions** para deploy automático na branch `main`. A cada push, o workflow executa:
 
 1. **Checkout** do código
-2. **Instalação** de dependências
+2. **Install** de dependências dentro de `portfolio-site/`
 3. **Build** do projeto (`npm run build`)
 4. **Deploy** para GitHub Pages
 
 O arquivo de configuração está em `.github/workflows/deploy.yml`.
 
-### Configuração Manual (se necessário)
+### Configuração no GitHub
 
 1. Acesse o repositório no GitHub
 2. Vá em **Settings → Pages**
@@ -153,13 +162,15 @@ O arquivo de configuração está em `.github/workflows/deploy.yml`.
 
 ## ⚙️ Configuração Importante
 
-O projeto está configurado para funcionar no sub-diretório `/portfolio-site/` do GitHub Pages:
+O projeto está configurado para funcionar no sub-diretório `/portfolio/` do GitHub Pages:
 
-- **`vite.config.ts`** — `base: '/portfolio-site/'`
-- **`src/router/index.ts`** — `createWebHistory('/portfolio-site/')`
+- **`vite.config.ts`** — `base: '/portfolio/'`
+- **`src/router/index.ts`** — `createWebHistory('/portfolio/')`
 - **`public/404.html`** — Redirecionamento para SPA routing
 
-Se for implantar na raiz do domínio, altere o `base` para `'/'` em ambos os arquivos.
+O workflow usa `working-directory: portfolio-site` para rodar os comandos no diretório correto.
+
+Se for implantar na raiz do domínio, altere o `base` para `'/'` em `vite.config.ts` e `router/index.ts`.
 
 ---
 

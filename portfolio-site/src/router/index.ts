@@ -10,7 +10,7 @@ const routes = [
 ]
 
 export default createRouter({
-  history: createWebHistory('/portfolio-site/'),
+  history: createWebHistory('/portfolio/'),
   routes,
   scrollBehavior() {
     return { top: 0 }
