@@ -1,1 +1,0 @@
-import{G as e,_ as t,b as n,d as r,s as i}from"./runtime-core.esm-bundler-C2f9-Y2Z.js";var a=r({__name:`GlassCard`,props:{padding:{default:`p-6`}},setup(r){return(a,o)=>(t(),i(`div`,{class:e([`glass rounded-2xl`,r.padding])},[n(a.$slots,`default`)],2))}});export{a as t};
