@@ -18,7 +18,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
   position: relative;
   min-height: 100vh;
-  overflow-x: clip;
+  /* Sem overflow aqui: qualquer overflow no body/html quebra
+     o `position: sticky` do header no Chrome Android.
+     O transbordo dos orbes é contido na seção do hero. */
 }
 
 body::before {

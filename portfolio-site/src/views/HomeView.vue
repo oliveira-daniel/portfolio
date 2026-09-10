@@ -100,7 +100,7 @@ const marcos = [
 
 <template>
   <!-- 1. HERO -->
-  <section class="mb-12 relative">
+  <section class="mb-12 relative overflow-x-clip">
     <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-10 w-64 h-64 rounded-full bg-[#518E45]/20 blur-3xl"></div>
     <div aria-hidden="true" class="pointer-events-none absolute -bottom-16 -right-8 w-72 h-72 rounded-full bg-[#F1CA30]/25 blur-3xl"></div>
     <GlassCard padding="p-6 md:p-8" class="relative">
